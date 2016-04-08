@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF0EA223-2AF7-4AB3-BE69-78C17924F276}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RetroNet</RootNamespace>
+    <AssemblyName>RetroNet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Command.cs" />
+    <Compile Include="Classes\Config.cs" />
+    <Compile Include="Classes\Connection.cs" />
+    <Compile Include="Classes\Download.cs" />
+    <Compile Include="Classes\Extensions.cs" />
+    <Compile Include="Classes\IniFile.cs" />
+    <Compile Include="Classes\Logger.cs" />
+    <Compile Include="Classes\Packet.cs" />
+    <Compile Include="Classes\Sizer.cs" />
+    <Compile Include="Classes\Upload.cs" />
+    <Compile Include="Controls\AeroListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApplicationHandlerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApplicationHandlerDialog.Designer.cs">
+      <DependentUpon>ApplicationHandlerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientBuilderDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientBuilderDialog.Designer.cs">
+      <DependentUpon>ClientBuilderDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClipboardLoggerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClipboardLoggerDialog.Designer.cs">
+      <DependentUpon>ClipboardLoggerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConfigurationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigurationDialog.Designer.cs">
+      <DependentUpon>ConfigurationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FileExplorerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FileExplorerDialog.Designer.cs">
+      <DependentUpon>FileExplorerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FileTransfersDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FileTransfersDialog.Designer.cs">
+      <DependentUpon>FileTransfersDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InputDialog.Designer.cs">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InstantMessengerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InstantMessengerDialog.Designer.cs">
+      <DependentUpon>InstantMessengerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KeystrokeCapturerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KeystrokeCapturerDialog.Designer.cs">
+      <DependentUpon>KeystrokeCapturerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LogDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogDialog.Designer.cs">
+      <DependentUpon>LogDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewsDialog.Designer.cs">
+      <DependentUpon>NewsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PluginsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PluginsDialog.Designer.cs">
+      <DependentUpon>PluginsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProcessManagerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProcessManagerDialog.Designer.cs">
+      <DependentUpon>ProcessManagerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegistryEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegistryEditorDialog.Designer.cs">
+      <DependentUpon>RegistryEditorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RemoteDesktopDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RemoteDesktopDialog.Designer.cs">
+      <DependentUpon>RemoteDesktopDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServiceAdministerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceAdministerDialog.Designer.cs">
+      <DependentUpon>ServiceAdministerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StartupMonitorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StartupMonitorDialog.Designer.cs">
+      <DependentUpon>StartupMonitorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UPnPDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UPnPDialog.Designer.cs">
+      <DependentUpon>UPnPDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WebcamDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WebcamDialog.Designer.cs">
+      <DependentUpon>WebcamDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApplicationHandlerDialog.resx">
+      <DependentUpon>ApplicationHandlerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientBuilderDialog.resx">
+      <DependentUpon>ClientBuilderDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClipboardLoggerDialog.resx">
+      <DependentUpon>ClipboardLoggerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigurationDialog.resx">
+      <DependentUpon>ConfigurationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileExplorerDialog.resx">
+      <DependentUpon>FileExplorerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FileTransfersDialog.resx">
+      <DependentUpon>FileTransfersDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputDialog.resx">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InstantMessengerDialog.resx">
+      <DependentUpon>InstantMessengerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeystrokeCapturerDialog.resx">
+      <DependentUpon>KeystrokeCapturerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogDialog.resx">
+      <DependentUpon>LogDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewsDialog.resx">
+      <DependentUpon>NewsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PluginsDialog.resx">
+      <DependentUpon>PluginsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProcessManagerDialog.resx">
+      <DependentUpon>ProcessManagerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegistryEditorDialog.resx">
+      <DependentUpon>RegistryEditorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RemoteDesktopDialog.resx">
+      <DependentUpon>RemoteDesktopDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ServiceAdministerDialog.resx">
+      <DependentUpon>ServiceAdministerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StartupMonitorDialog.resx">
+      <DependentUpon>StartupMonitorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UPnPDialog.resx">
+      <DependentUpon>UPnPDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WebcamDialog.resx">
+      <DependentUpon>WebcamDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\bricks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\connect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\drive_network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\plugin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\shape_move_forwards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\wrench_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\newspaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\user_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\user_suit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow_rotate_clockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\page_world.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\webcam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\application_cascade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\page_paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\cog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\comments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\flag_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\flag_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\flag_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\application_view_list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\lorry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\page_copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\page_white_text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\drive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\page_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\page_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\control_play_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\control_stop_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\control_repeat_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\control_pause_blue.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
